@@ -9,7 +9,11 @@ image:
 
 # Настройки сети
 service:
-  type: NodePort
+  type: ClusterIp
   port: 80
   targetPort: 80
-  nodePort: 31180
+
+ingress:
+  enable: true
+  className: "nginx"
+  host: my-gitops-app.local
