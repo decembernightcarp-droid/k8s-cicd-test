@@ -1,19 +1,19 @@
-# Количество копий приложения
 replicaCount: 3
 
-# Настройки Docker-образа
 image:
-  repository: ipadm1337/my-web-app
-  tag: "latest"
-  pullPolicy: Always
+  repository: stefanprodan/podinfo
+  tag: "6.4.0"
+  pullPolicy: IfNotPresent
 
-# Настройки сети
 service:
   type: ClusterIP
   port: 80
-  targetPort: 80
+  targetPort: 9898
 
 ingress:
   enabled: true
   className: "nginx"
   host: my-gitops-app.local
+
+metrics:
+  enabled: true
