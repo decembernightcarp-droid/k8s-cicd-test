@@ -6,8 +6,8 @@ spec:
   selector:
     app: {{ .Release.Name }}-web
   ports:
-    - protocol: TCP
+    - name: http-metrics   # <--- Prometheus будет искать порт по этому имени
+      protocol: TCP
       port: {{ .Values.service.port }}
       targetPort: {{ .Values.service.targetPort }}
-      nodePort: {{ .Values.service.nodePort }}
   type: {{ .Values.service.type }}
