@@ -1,5 +1,5 @@
 # Количество копий приложения
-replicaCount: 2
+replicaCount: 3
 
 # Настройки Docker-образа
 image:
