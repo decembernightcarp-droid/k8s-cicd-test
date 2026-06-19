@@ -1,0 +1,15 @@
+# Количество копий приложения
+replicaCount: 2
+
+# Настройки Docker-образа
+image:
+  repository: ipadm1337/my-web-app
+  tag: "latest"
+  pullPolicy: Always
+
+# Настройки сети
+service:
+  type: NodePort
+  port: 80
+  targetPort: 80
+  nodePort: 31180
