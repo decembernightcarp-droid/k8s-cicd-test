@@ -1,0 +1,18 @@
+{{- if .Values.metrics.enabled }}
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: {{ .Release.Name }}-monitor
+  labels:
+    # ОЧЕНЬ ВАЖНО: Указываем имя релиза нашего мониторинга (k8s-mon), 
+    # чтобы Prometheus понял, что этот монитор предназначается именно ему.
+    release: k8s-mon
+spec:
+  selector:
+    matchLabels:
+      app: {{ .Release.Name }}-web
+  endpoints:
+    - port: http-metrics
+      path: /metrics
+      interval: 15s
+{{- end }}
