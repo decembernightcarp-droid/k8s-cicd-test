@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: web-container
-        image: ТВОЙ_ЛОГИН_DOCKER_HUB/my-web-app:latest  # <--- Меняем здесь
+        image: ipadm1337/my-web-app:latest  # <--- Меняем здесь
         imagePullPolicy: Always                         # <--- Меняем на Always, чтобы K8s проверял новые версии
         ports:
         - containerPort: 80
