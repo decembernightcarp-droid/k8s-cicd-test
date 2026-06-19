@@ -9,7 +9,7 @@ image:
 
 # Настройки сети
 service:
-  type: ClusterIp
+  type: ClusterIP
   port: 80
   targetPort: 80
 
